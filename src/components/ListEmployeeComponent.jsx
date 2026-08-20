@@ -6,12 +6,14 @@ const ListEmployeeComponent = () => {
     const [employees, setEmployees] = useState([])
     const navigator = useNavigate()
 
+    const BASE_URL = 'https://ems-backend-uwb1.onrender.com/api/employees'
+
     useEffect(() => {
         getAllEmployees()
     }, [])
 
     function getAllEmployees() {
-        axios.get('http://localhost:8080/api/employees')
+        axios.get(BASE_URL)
             .then(response => {
                 setEmployees(response.data)
             })
@@ -27,7 +29,7 @@ const ListEmployeeComponent = () => {
     }
 
     function removeEmployee(id) {
-        axios.delete(`http://localhost:8080/api/employees/${id}`)
+        axios.delete(`${BASE_URL}/${id}`)
             .then(response => {
                 console.log(response.data)
                 getAllEmployees()
