@@ -6,7 +6,7 @@ const ListEmployeeComponent = () => {
     const [employees, setEmployees] = useState([])
     const navigator = useNavigate()
 
-    const BASE_URL = 'https://ems-backend-uwb1.onrender.com/api/employees'
+    const BASE_URL = 'https://ems-backend-1-9k1k.onrender.com/api/employees'
 
     useEffect(() => {
         getAllEmployees()
